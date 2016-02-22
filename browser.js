@@ -1,8 +1,9 @@
+
 /* eslint-env es6 */
 var React = require('react')
 var ReactDOM = require('react-dom')
 var Relay = require('react-relay')
-var App = require('./App')
+var ConferenceApp = require('./ConferenceApp')
 
 // This file is the entry point on the browser – browserify will compile it, as
 // well as App.js and any other client-side dependencies and create
@@ -15,9 +16,10 @@ ReactDOM.render(
   // event, then we would update it here.
   // We also illustrate the use of the onReadyStateChange handler in case
   // there's a network error, etc
-  <Relay.RootContainer Component={App.Container} route={App.queries}
+  <Relay.RootContainer
+    Component={ConferenceApp.Container}
+    route={ConferenceApp.queries}
     onReadyStateChange={({error}) => { if (error) console.error(error) }} />,
 
   document.getElementById('content')
 )
-
